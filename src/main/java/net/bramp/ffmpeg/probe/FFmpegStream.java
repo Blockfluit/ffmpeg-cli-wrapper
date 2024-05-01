@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -213,6 +214,7 @@ public class FFmpegStream {
   }
 
   public Map<String, String> getTags() {
+    if(tags == null) return Collections.emptyMap();
     return ImmutableMap.copyOf(tags);
   }
 
