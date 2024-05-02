@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -65,8 +66,7 @@ public class FFmpegStream {
   // TODO: Make Map immutable
   public Map<String, String> tags;
 
-  // TODO: Convert array to immutable List
-  public SideData[] side_data_list;
+  public List<SideData> side_data_list;
 
   public int getIndex() {
     return index;
@@ -213,10 +213,12 @@ public class FFmpegStream {
   }
 
   public Map<String, String> getTags() {
+    if(tags == null) return Collections.emptyMap();
     return ImmutableMap.copyOf(tags);
   }
 
   public List<SideData> getSideDataList() {
+    if(side_data_list == null) return Collections.emptyList();
     return ImmutableList.copyOf(side_data_list);
   }
 
