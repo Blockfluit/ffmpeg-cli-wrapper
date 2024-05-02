@@ -66,8 +66,7 @@ public class FFmpegStream {
   // TODO: Make Map immutable
   public Map<String, String> tags;
 
-  // TODO: Convert array to immutable List
-  public SideData[] side_data_list;
+  public List<SideData> side_data_list;
 
   public int getIndex() {
     return index;
