@@ -219,6 +219,7 @@ public class FFmpegStream {
   }
 
   public List<SideData> getSideDataList() {
+    if(side_data_list == null) return Collections.emptyList();
     return ImmutableList.copyOf(side_data_list);
   }
 
